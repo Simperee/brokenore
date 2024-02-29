@@ -1,0 +1,4 @@
+name: brokenore
+version: '${version}'
+main: com.simpery.brokenore.Brokenore
+api-version: '1.20'
