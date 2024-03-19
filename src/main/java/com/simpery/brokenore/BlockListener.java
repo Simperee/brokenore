@@ -1,6 +1,5 @@
 package com.simpery.brokenore;
 
-import com.simpery.brokenore.DiscordHook;
 import com.simpery.brokenore.DiscordHook.EmbedObject;
 
 import org.bukkit.event.EventHandler;
