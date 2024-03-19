@@ -28,17 +28,26 @@ public class BlockListener implements Listener {
         CurrentTime= LocalTime.now();
         if(broken_block.matches("MEKANISM_OSMIUM_ORE|MEKANISM_DEEPSLATE_OSMIUM_ORE|MEKANISM_URANIUM_ORE|MEKANISM_DEEPSLATE_URANIUM_ORE")){
             System.out.println(playerName+" broke: "+broken_block);
+            DiscordHook webhook = new DiscordHook("");
+            webhook.setUsername(playerName);
+            webhook.setAvatarUrl("https://mc-heads.net/avatar/"+playerName+".png");
+            EmbedObject embed = new EmbedObject();
+            embed.setTitle(playerName);
+            embed.setDescription("Ore broken: "+broken_block);
             if(CurrentTime.format(Format)!=null){
                 System.out.println(block_coord+" at time: "+CurrentTime.format(Format));
+                embed.setFooter(CurrentTime.format(Format));
             }
             else{
                 System.out.println(block_coord);
             }
+            webhook.addEmbed(embed);
+            webhook.execute();
         }
         if(broken_block.matches("DIAMOND_ORE|DEEPSLATE_DIAMOND_ORE|ANCIENT_DEBRIS")){
             System.out.println(playerName+" broke: "+broken_block);
-            DiscordHook webhook = new DiscordHook("https://discord.com/api/webhooks/1212802166293790800/DkVVu-zddMk1rjCJ-T2wO0hc6bJG_NG23xRfdDxQgewVOduFlE7XbHMFUDDtKElVe3N_");
-            webhook.setUsername("I touch little kids");
+            DiscordHook webhook = new DiscordHook("");
+            webhook.setUsername(playerName);
             webhook.setAvatarUrl("https://mc-heads.net/avatar/"+playerName+".png");
             EmbedObject embed = new EmbedObject();
             embed.setTitle(playerName);
